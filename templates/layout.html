@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>World Mineral Production</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <div class="container-xl justify-content-center">
+            <img src="static/pickaxe.png" width="40"><a class="navbar-brand text-center" style="font-size: 2em; letter-spacing: 6px;" href="/" id="landing-page" aria-controls="landing-page" aria-selected="False">OreAtlas</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-primary-custom_1" id="ferro-alloy-tab" href="ferro-alloy" aria-controls="ferro-alloy" aria-selected="true">Ferro-Alloy Metals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-primary-custom2_1" id="non-ferrous-tab" href="non-ferrous" aria-controls="non-ferrous" aria-selected="false">Non-Ferrous Metals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-primary-custom3_1" id="precious-metals-tab" href="precious-metals" aria-controls="precious-metals" aria-selected="false">Precious Metals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-primary-custom4_1" id="industrial-minerals-tab" href="industrial-minerals" aria-controls="industrial-minerals" aria-selected="false">Industrial Minerals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-outline-primary-custom5_1" id="mineral-fuels-tab" href="mineral-fuels" aria-controls="mineral-fuels" aria-selected="false">Mineral Fuels</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block landingpage %}{% endblock %}
+    <div class="container-xl justify-content-center mt-3">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs justify-content-center" role="tablist">
+                    {% block tablist %}{% endblock %}
+                </ul>
+            </div>
+            {% block tabcontent %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <h6 class="text-center"><br><br>
+            Source data was retrieved from <a href="https://www.world-mining-data.info/">www.world-mining-data.info</a>.
+        </h6>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var aboutProjectButton = document.querySelector('[data-target="#collapseAboutProject"]');
+            var aboutRyanButton = document.querySelector('[data-target="#collapseAboutRyan"]');
+            var aboutProjectCollapse = document.querySelector('#collapseAboutProject');
+            var aboutRyanCollapse = document.querySelector('#collapseAboutRyan');
+
+            aboutProjectButton.addEventListener("click", function() {
+                if (aboutRyanCollapse.classList.contains('show')) {
+                    aboutRyanCollapse.classList.remove('show');
+                }
+            });
+
+            aboutRyanButton.addEventListener("click", function() {
+                if (aboutProjectCollapse.classList.contains('show')) {
+                    aboutProjectCollapse.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

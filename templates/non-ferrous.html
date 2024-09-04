@@ -1,0 +1,160 @@
+<!--Non ferrous
+    'Aluminium', 'Antimony', 'Arsenic', 'Bauxite', 'Beryllium (conc.)', 'Bismuth', 'Cadmium', 'Copper', 'Gallium', 'Germanium', 'Indium', 'Lead', 'Lithium (Li2O)', 'Mercury', 'Rare Earths (REO)', 'Rhenium', 'Selenium', 'Tellurium', 'Tin', 'Zinc'-->
+{% extends "layout.html" %}
+
+{% block title %}
+    Non-Ferrous Metals
+{% endblock %}
+
+{% block tablist %}
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1 active" id="aluminium-tab" data-toggle="tab" href="#aluminium" role="tab" aria-controls="aluminium" aria-selected="true">Aluminum (Al)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="antimony-tab" data-toggle="tab" href="#antimony" role="tab" aria-controls="antimony" aria-selected="false">Antimony (Sb)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="arsenic-tab" data-toggle="tab" href="#arsenic" role="tab" aria-controls="arsenic" aria-selected="true">Arsenic (As<sub>2</sub>O<sub>3</sub>)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="bauxite-tab" data-toggle="tab" href="#bauxite" role="tab" aria-controls="bauxite" aria-selected="true">Bauxite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="beryllium-tab" data-toggle="tab" href="#beryllium" role="tab" aria-controls="beryllium" aria-selected="true">Beryllium</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="bismuth-tab" data-toggle="tab" href="#bismuth" role="tab" aria-controls="bismuth" aria-selected="true">Bismuth (Bi)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="cadmium-tab" data-toggle="tab" href="#cadmium" role="tab" aria-controls="cadmium" aria-selected="true">Cadmium (Cd)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="copper-tab" data-toggle="tab" href="#copper" role="tab" aria-controls="copper" aria-selected="true">Copper (Cu)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="gallium-tab" data-toggle="tab" href="#gallium" role="tab" aria-controls="gallium" aria-selected="true">Gallium (Ga)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="germanium-tab" data-toggle="tab" href="#germanium" role="tab" aria-controls="germanium" aria-selected="true">Germanium (Ge)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="indium-tab" data-toggle="tab" href="#indium" role="tab" aria-controls="indium" aria-selected="true">Indium (In)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="lead-tab" data-toggle="tab" href="#lead" role="tab" aria-controls="lead" aria-selected="true">Lead (Pb)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="lithium-tab" data-toggle="tab" href="#lithium" role="tab" aria-controls="lithium" aria-selected="true">Lithium (Li<sub>2</sub>O)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="mercury-tab" data-toggle="tab" href="#mercury" role="tab" aria-controls="mercury" aria-selected="true">Mercury (Hg)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="rare-earths-tab" data-toggle="tab" href="#rare-earths" role="tab" aria-controls="rare-earths" aria-selected="true">Rare Earth Minerals (REO)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="rhenium-tab" data-toggle="tab" href="#rhenium" role="tab" aria-controls="rhenium" aria-selected="true">Rhenium (Re)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="selenium-tab" data-toggle="tab" href="#selenium" role="tab" aria-controls="selenium" aria-selected="true">Selenium (Se)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="tellurium-tab" data-toggle="tab" href="#tellurium" role="tab" aria-controls="tellurium" aria-selected="true">Tellurium (Te)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="tin-tab" data-toggle="tab" href="#tin" role="tab" aria-controls="tin" aria-selected="true">Tin (Sn)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom2_1" id="zinc-tab" data-toggle="tab" href="#zinc" role="tab" aria-controls="zinc" aria-selected="true">Zinc (Zn)</a>
+    </li>
+
+{% endblock %}
+
+{% block tabcontent %}
+<div class="card-body">
+    <div class="tab-content" id="tab-content">
+        <div class="tab-pane fade show active" id="aluminium" role="tabpanel" aria-labelledby="aluminium-tab">
+            <!-- <h5>Aluminium</h5> -->
+            {{ map_dict["Aluminium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="antimony" role="tabpanel" aria-labelledby="antimony-tab">
+            <!-- <h5>Antimony</h5> -->
+            {{ map_dict["Antimony"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="arsenic" role="tabpanel" aria-labelledby="arsenic-tab">
+            <!-- <h5>Arsenic</h5> -->
+            {{ map_dict["Arsenic"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="bauxite" role="tabpanel" aria-labelledby="bauxite-tab">
+            <!-- <h5>Bauxite</h5> -->
+            {{ map_dict["Bauxite"] | safe }}
+            (crude ore)
+        </div>
+        <div class="tab-pane fade" id="beryllium" role="tabpanel" aria-labelledby="beryllium-tab">
+            <!--<h5>Beryllium (conc.)</h5>-->
+            {{ map_dict["Beryllium (conc.)"] | safe }}
+            (concentrate)
+        </div>
+        <div class="tab-pane fade" id="bismuth" role="tabpanel" aria-labelledby="bismuth-tab">
+            <!--<h5>Bismuth</h5>-->
+            {{ map_dict["Bismuth"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="cadmium" role="tabpanel" aria-labelledby="cadmium-tab">
+            <!--<h5>Cadmium</h5>-->
+            {{ map_dict["Cadmium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="copper" role="tabpanel" aria-labelledby="copper-tab">
+            <!--<h5>Copper</h5>-->
+            {{ map_dict["Copper"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="gallium" role="tabpanel" aria-labelledby="gallium-tab">
+            <!--<h5>Gallium</h5>-->
+            {{ map_dict["Gallium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="germanium" role="tabpanel" aria-labelledby="germanium-tab">
+            <!--<h5>Germanium</h5>-->
+            {{ map_dict["Germanium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="indium" role="tabpanel" aria-labelledby="indium-tab">
+            <!--<h5>Indium</h5>-->
+            {{ map_dict["Indium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="lead" role="tabpanel" aria-labelledby="lead-tab">
+            <!--<h5>Lead</h5>-->
+            {{ map_dict["Lead"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="lithium" role="tabpanel" aria-labelledby="lithium-tab">
+            <!--<h5>Lithium</h5>-->
+            {{ map_dict["Lithium (Li2O)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="mercury" role="tabpanel" aria-labelledby="mercury-tab">
+            <!--<h5>Mercury</h5>-->
+            {{ map_dict["Mercury"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="rare-earths" role="tabpanel" aria-labelledby="rare-earths-tab">
+            <!--<h5>Rare Earths</h5>-->
+            {{ map_dict["Rare Earths (REO)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="rhenium" role="tabpanel" aria-labelledby="rhenium-tab">
+            <!--<h5>Rhenium</h5>-->
+            {{ map_dict["Rhenium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="selenium" role="tabpanel" aria-labelledby="selenium-tab">
+            <!--<h5>Selenium</h5>-->
+            {{ map_dict["Selenium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="tellurium" role="tabpanel" aria-labelledby="tellurium-tab">
+            <!--<h5>Tellurium</h5>-->
+            {{ map_dict["Tellurium"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="tin" role="tabpanel" aria-labelledby="tin-tab">
+            <!--<h5>Tin</h5>-->
+            {{ map_dict["Tin"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="zinc" role="tabpanel" aria-labelledby="zinc-tab">
+            <!--<h5>Zinc</h5>-->
+            {{ map_dict["Zinc"] | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,172 @@
+<!--Page for industrial minerals
+
+#
+# industrial
+# 'Asbestos', 'Baryte', 'Bentonite', 'Boron Minerals', 'Diamonds (Gem)', 'Diamonds (Ind)', 'Diatomite', 'Feldspar', 'Fluorspar', 'Graphite', 'Gypsum and Anhydrite', 'Kaolin (China-Clay)', 'Magnesite', 'Perlite', 'Phosphate Rock (P2O5)', 'Potash (K2O)', 'Salt (rock, brines, marine)', 'Sulfur (elementar & industrial)', 'Talc, Steatite & Pyrophyllite', 'Vermiculite', 'Zircon'
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Industrial Minerals
+{% endblock %}
+
+{% block tablist %}
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1 active" id="asbestos-tab" data-toggle="tab" href="#asbestos" role="tab" aria-controls="asbestos" aria-selected="true">Asbestos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="baryte-tab" data-toggle="tab" href="#baryte" role="tab" aria-controls="baryte" aria-selected="true">Baryte</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="bentonite-tab" data-toggle="tab" href="#bentonite" role="tab" aria-controls="bentonite" aria-selected="true">Bentonite</a>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="boron-tab" data-toggle="tab" href="#boron" role="tab" aria-controls="boron" aria-selected="true">Boron Minerals</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="diamond-gem-tab" data-toggle="tab" href="#diamond-gem" role="tab" aria-controls="diamond-gem" aria-selected="true">Diamonds (Gem)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="diamond-ind-tab" data-toggle="tab" href="#diamond-ind" role="tab" aria-controls="diamond-ind" aria-selected="true">Diamonds (Industrial)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="diatomite-tab" data-toggle="tab" href="#diatomite" role="tab" aria-controls="diatomite" aria-selected="true">Diatomite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="feldspar-tab" data-toggle="tab" href="#feldspar" role="tab" aria-controls="feldspar" aria-selected="true">Feldspar</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="fluorspar-tab" data-toggle="tab" href="#fluorspar" role="tab" aria-controls="fluorspar" aria-selected="true">Fluorspar</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="graphite-tab" data-toggle="tab" href="#graphite" role="tab" aria-controls="graphite" aria-selected="true">Graphite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="gypsum-anhydrite-tab" data-toggle="tab" href="#gypsum-anhydrite" role="tab" aria-controls="gypsum-anhydrite" aria-selected="true">Gypsum & Anhydrite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="kaolin-tab" data-toggle="tab" href="#kaolin" role="tab" aria-controls="kaolin" aria-selected="true">Kaolin</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="magnesite-tab" data-toggle="tab" href="#magnesite" role="tab" aria-controls="magnesite" aria-selected="true">Magnesite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="perlite-tab" data-toggle="tab" href="#perlite" role="tab" aria-controls="perlite" aria-selected="true">Perlite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="phosphate-tab" data-toggle="tab" href="#phosphate" role="tab" aria-controls="phosphate" aria-selected="true">Phosphate Rock (P<sub>2</sub>O<sub>5</sub>)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="potash-tab" data-toggle="tab" href="#potash" role="tab" aria-controls="potash" aria-selected="true">Potash (K<sub>2</sub>O)</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="salt-tab" data-toggle="tab" href="#salt" role="tab" aria-controls="salt" aria-selected="true">Salt</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="sulfur-tab" data-toggle="tab" href="#sulfur" role="tab" aria-controls="sulfur" aria-selected="true">Sulfur</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="talc-tab" data-toggle="tab" href="#talc" role="tab" aria-controls="talc" aria-selected="true">Talc</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="vermiculite-tab" data-toggle="tab" href="#vermiculite" role="tab" aria-controls="vermiculite" aria-selected="true">Vermiculite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom4_1" id="zircon-tab" data-toggle="tab" href="#zircon" role="tab" aria-controls="zircon" aria-selected="true">Zircon</a>
+    </li>
+{% endblock %}
+
+{% block tabcontent %}
+<div class="card-body">
+    <div class="tab-content" id="tab-content">
+        <div class="tab-pane fade show active" id="asbestos" role="tabpanel" aria-labelledby="asbestos-tab">
+            <!-- <h5>Asbestos</h5> -->
+            {{ map_dict["Asbestos"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="baryte" role="tabpanel" aria-labelledby="baryte-tab">
+            <!-- <h5>Baryte</h5> -->
+            {{ map_dict["Baryte"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="bentonite" role="tabpanel" aria-labelledby="bentonite-tab">
+            <!-- <h5>bentonite</h5> -->
+            {{ map_dict["Bentonite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="boron" role="tabpanel" aria-labelledby="boron-tab">
+            <!-- <h5>Boron</h5> -->
+            {{ map_dict["Boron Minerals"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="diamond-gem" role="tabpanel" aria-labelledby="diamond-gem-tab">
+            <!-- <h5>Diamonds (Gem)</h5> -->
+            {{ map_dict["Diamonds (Gem)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="diamond-ind" role="tabpanel" aria-labelledby="diamond-ind-tab">
+            <!-- <h5>Diamonds (Industrial)</h5> -->
+            {{ map_dict["Diamonds (Ind)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="diatomite" role="tabpanel" aria-labelledby="diatomite-tab">
+            <!-- <h5>Diatomite</h5> -->
+            {{ map_dict["Diatomite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="feldspar" role="tabpanel" aria-labelledby="feldspar-tab">
+            <!-- <h5>Feldspar</h5> -->
+            {{ map_dict["Feldspar"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="fluorspar" role="tabpanel" aria-labelledby="fluorspar-tab">
+            <!-- <h5>Fluorspar</h5> -->
+            {{ map_dict["Fluorspar"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="graphite" role="tabpanel" aria-labelledby="graphite-tab">
+            <!-- <h5>Graphite</h5> -->
+            {{ map_dict["Graphite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="gypsum-anhydrite" role="tabpanel" aria-labelledby="gypsum-anhydrite-tab">
+            <!-- <h5>Gypsum and Anhydrite</h5> -->
+            {{ map_dict["Gypsum and Anhydrite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="kaolin" role="tabpanel" aria-labelledby="kaolin-tab">
+            <!-- <h5>Kaolin (China Clay)</h5> -->
+            {{ map_dict["Kaolin (China-Clay)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="magnesite" role="tabpanel" aria-labelledby="magnesite-tab">
+            <!-- <h5>Magnesite</h5> -->
+            {{ map_dict["Magnesite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="perlite" role="tabpanel" aria-labelledby="perlite-tab">
+            <!-- <h5>Perlite</h5> -->
+            {{ map_dict["Perlite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="phosphate" role="tabpanel" aria-labelledby="phosphate-tab">
+            <!-- <h5>Phosphate Rock (P2O5)</h5> -->
+            {{ map_dict["Phosphate Rock (P2O5)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="potash" role="tabpanel" aria-labelledby="potash-tab">
+            <!-- <h5>Potash (K2O)</h5> -->
+            {{ map_dict["Potash (K2O)"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="salt" role="tabpanel" aria-labelledby="salt-tab">
+            <!-- <h5>Salt (rock, brines, marine)</h5> -->
+            {{ map_dict["Salt (rock, brines, marine)"] | safe }}
+            <footer>(Rock Salt, Brines, Marine Salt)</footer>
+        </div>
+        <div class="tab-pane fade" id="sulfur" role="tabpanel" aria-labelledby="sulfur-tab">
+            <!-- <h5>Sulfur (elementar & industrial)</h5> -->
+            {{ map_dict["Sulfur (elementar & industrial)"] | safe }}
+            <footer>(Elementary and industrial)</footer>
+        </div>
+        <div class="tab-pane fade" id="talc" role="tabpanel" aria-labelledby="talc-tab">
+            <!-- <h5>Talc, Steatite & Pyrophyllite</h5> -->
+            {{ map_dict["Talc, Steatite & Pyrophyllite"] | safe }}
+            <footer>Incl. Steatite and Pyrophyllite</footer>
+        </div>
+        <div class="tab-pane fade" id="vermiculite" role="tabpanel" aria-labelledby="vermiculite-tab">
+            <!-- <h5>Vermiculite</h5> -->
+            {{ map_dict["Vermiculite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="zircon" role="tabpanel" aria-labelledby="zircon-tab">
+            <!-- <h5>Zircon</h5> -->
+            {{ map_dict["Zircon"] | safe }}
+            <footer>(concentrate)</footer>
+        </div>
+    </div>
+</div>
+{% endblock %}

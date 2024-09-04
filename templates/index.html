@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Global Mineral Production
+{% endblock %}
+{% block landingpage %}
+
+<div class="container-xl justify-content-center mt-3">
+    <div class="jumbotron text-center">
+        <h1>Welcome to OreAtlas!</h1>
+        <h5 class="lead">Explore global mineral production data with interactive maps.</h5><br>
+        <div class="row">
+            <div class="col-md-3 offset-md-3 mb-4">
+                <button class="btn btn-outline-primary-custom6 btn-sm btn-block rounded-pill py-3 px-4" type="button" data-toggle="collapse" data-target="#collapseAboutProject" aria-expanded="false" aria-controls="collapseAboutProject">
+                    About OreAtlas
+                </button>
+                <!--<img src="static/pickaxe.png" width="25">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+            </div>
+            <div class="col-md-3 mb-4">
+                <button class="btn btn-outline-primary-custom6 btn-sm btn-block rounded-pill py-3 px-4" type="button" data-toggle="collapse" data-target="#collapseAboutRyan" aria-expanded="false" aria-controls="collapseAboutRyan">
+                    About Ryan
+                </button>
+                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="static/pickaxe_reverse.png" width="25">-->
+            </div>
+            <div class="col-md-10 offset-md-1 mb-4">
+                <div class="collapse" id="collapseAboutProject">
+                    <div class="card card-body">
+                        <div class="text-block">
+                            <h6><b>OreAtlas</b> was made as a final project for <i>CS50's Introduction to Computer Science</i>, an online course offered by Harvard University. The source data is accessible on <a href="https://www.world-mining-data.info/">www.world-mining-data.info</a> and in the annual publication <i>"World Mining Data"</i> by the Austrian Federal Ministry of Finance. Please consult their website for additional information. OreAtlas displays mining data for the year 2022.</h6>
+                        </div>
+
+                        <br>
+                        <h5>Exploring the app is easy:<br><br>
+                        <picture>
+                            <!-- Image set for mobile devices -->
+                            <source srcset="static/mobile-info-1-1.png" media="(max-width: 767px)">
+                            <!-- Image set for larger screens (e.g., computers) -->
+                            <source srcset="static/OreAtlas_Categories1.png" media="(min-width: 768px)">
+                            <!--Fallback image if browser doesn't accept Picture tags-->
+                            <img src="static/OreAtlas_Categories1.png" class="responsive-img">
+                        </picture>
+                        <picture>
+                            <!-- Image set for mobile devices -->
+                            <source srcset="static/mobile-info-2.png" media="(max-width: 767px)">
+                            <!-- Image set for larger screens (e.g., computers) -->
+                            <source srcset="static/OreAtlas_Demo.png" media="(min-width: 768px)">
+                            <!--Fallback image if browser doesn't accept Picture tags-->
+                            <img src="static/OreAtlas_Demo.png" class="responsive-img" >
+                        </picture><br>
+                        <!--style="width: 100%; height: auto; display: block;"-->
+                    </div>
+                </div>
+                <div class="collapse" id="collapseAboutRyan">
+                    <div class="card card-body">
+                        <h4><a class="link" href="https://ca.linkedin.com/in/rdmckay"><img src="static/linkedin-logo.png" width="30" height="30">&nbsp;&nbsp;Ryan McKay</h4></a>
+                        <div class="text-block">
+                            <h6>is a Canadian geologist working in the mining technology sector. He has a master's degree in tectonics & thermochronology, four years of mining experience, and most importantly, a lifelong-learner mindset! <br><br><b>OreAtlas</b> represents a key milestone in Ryan's coding journey, reflecting his passion for enhancing public awareness of geoscience data.</h6>
+                        </div>
+                        <br><br><img src="static/peru4.JPG" id="peruIMG" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <h5>Select a category to begin:</h5>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <a class="btn btn-outline-primary-custom btn-lg btn-block rounded-pill py-3 px-4" href="ferro-alloy" role="button"><img src="static/rock2.png" width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ferro-Alloy Metals</a>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <a class="btn btn-outline-primary-custom2 btn-lg btn-block rounded-pill py-3 px-4" href="non-ferrous" role="button">Non-Ferrous Metals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="static/mining-cart.png" width="50"></a>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <a class="btn btn-outline-primary-custom3 btn-lg btn-block rounded-pill py-3 px-4" href="precious-metals" role="button"><img src="static/gold-bars.png" width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Precious Metals</a>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <a class="btn btn-outline-primary-custom4 btn-lg btn-block rounded-pill py-3 px-4" href="industrial-minerals" role="button">Industrial Minerals&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="static/mining-truck.png" width="50"></a>
+            </div>
+            <div class="col-md-6 offset-md-3 mb-4">
+                <a class="btn btn-outline-primary-custom5 btn-lg btn-block rounded-pill py-3 px-4" href="mineral-fuels" role="button"><img src="static/oil.png" width="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mineral Fuels</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="container-xl justify-content-center mt-3">
+        <div class="jumbotron text-center">
+            <h1>Welcome to OreAtlas!</h1>
+            <h5 class="lead">Explore global mineral production data with interactive maps.</h5><br><br>
+            <p>Navigate through the production figures of 65 mineral commodities from 168 countries. <br>Select a mineral category to start.</p>
+            <a class="btn btn-primary btn-lg" href="#ferro-alloy" role="button">Ferro-Alloy Metals</a><br>
+            <a class="btn btn-primary btn-lg" href="#non-ferrous" role="button">Non-Ferrous Metals</a><br>
+            <a class="btn btn-primary btn-lg" href="#precious-metals" role="button">Precious Metals</a><br>
+            <a class="btn btn-primary btn-lg" href="#industrial-minerals" role="button">Industrial Minerals</a><br>
+            <a class="btn btn-primary btn-lg" href="#mineral-fuels" role="button">Mineral Fuels</a>
+        </div>
+        <footer>
+            This webpage was designed by Ryan McKay as the final project for <i>CS50's Introduction to Computer Science</i> by Harvard University. All data sourced from https://www.world-mining-data.info/
+        </footer>
+    </div> -->
+
+{% endblock %}
+{% block tabcontent %}
+{% endblock %}

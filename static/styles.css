@@ -1,0 +1,199 @@
+.text-block {
+    margin: 0 auto; /* Center the text block */
+    max-width: 675px; /* Adjust the max width as needed */
+    padding: 0 15px; /* Add horizontal padding */
+}
+
+.image-container {
+    text-align: center; /* Center images horizontally */
+}
+.image-container img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .image-container img {
+        max-width: 550px; /* Maximum width for desktop */
+    }
+}
+
+/* Default styles for images */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .responsive-img {
+        max-width: 65%; /* Adjust this percentage or use a specific pixel value */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+/* Center the image container */
+.card-body {
+    text-align: center;
+}
+
+#peruIMG {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    #peruIMG {
+        max-width: 550px;
+    }
+}
+
+.btn-outline-primary-custom {
+    color: rgb(217, 72, 1);
+    border-color: rgb(217, 72, 1);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom:hover,
+.btn-outline-primary-custom:focus {
+    background-color: rgb(217, 72, 1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom_1 {
+    color: rgb(217, 72, 1);
+    border-color: rgb(217, 72, 1);
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom_1:hover,
+.btn-outline-primary-custom_1:focus {
+    background-color: rgb(217, 72, 1);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom2 {
+    color: rgb(28, 144, 153);
+    border-color: rgb(28, 144, 153);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom2:hover,
+.btn-outline-primary-custom2:focus {
+    background-color: rgb(28, 144, 153);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom2_1 {
+    color: rgb(28, 144, 153);
+    border-color: rgb(28, 144, 153);
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom2_1:hover,
+.btn-outline-primary-custom2_1:focus {
+    background-color: rgb(28, 144, 153);
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom3 {
+    color: rgb(253, 231, 37);
+    border-color: rgb(253, 231, 37);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom3:hover,
+.btn-outline-primary-custom3:focus {
+    background-color: rgb(253, 231, 37);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom3_1 {
+    color: rgb(253, 231, 37);
+    border-color: rgb(253, 231, 37);
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom3_1:hover,
+.btn-outline-primary-custom3_1:focus {
+    background-color: rgb(253, 231, 37);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom4 {
+    color: rgb(173, 221, 142);
+    border-color: rgb(173, 221, 142);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom4:hover,
+.btn-outline-primary-custom4:focus {
+    background-color: rgb(173, 221, 142);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom4_1 {
+    color: rgb(173, 221, 142);
+    border-color: rgb(173, 221, 142);
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom4_1:hover,
+.btn-outline-primary-custom4_1:focus {
+    background-color: rgb(173, 221, 142);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom5 {
+    color: rgb(201, 148, 199);
+    border-color: rgb(201, 148, 199);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom5:hover,
+.btn-outline-primary-custom5:focus {
+    background-color: rgb(201, 148, 199);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom5_1 {
+    color: rgb(201, 148, 199);
+    border-color: rgb(201, 148, 199);
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom5_1:hover,
+.btn-outline-primary-custom5_1:focus {
+    background-color: rgb(201, 148, 199);
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom6 {
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    background-color: #444;
+    font-weight: bold;
+}
+
+.btn-outline-primary-custom6:hover,
+.btn-outline-primary-custom6:focus {
+    background-color: #36454f;
+    color: #c1cdcd;
+    font-weight: bold;
+}

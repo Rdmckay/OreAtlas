@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Iron and Ferro-Alloy Metals</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+        <div class="container-xl justify-content-center">
+            <a class="navbar-brand text-center disabled" href="#">Global Mineral<br>Production</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="maps"><span style="color:white;">Iron and Ferro-Alloy Metals</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span style="color:white;">Non-Ferrous Metals</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span style="color:white;">Precious Metals</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><span style="color:white;">Industrial Minerals</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" tabindex="-1"><span style="color:white;">Mineral Fuels</span></a></li>
+                    </ul>
+                </div>
+        </div>
+    </nav>
+    <div class="container-xl justify-content-center">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Iron and Ferro-Alloy Metals</h5>
+
+                <ul class="nav nav-tabs card-header-tabs justify-content-center" data-bs-tabs="tabs" role="tablist">
+                    {% for key, value in tab_id_dict.items() %}
+                        {% for k, v in href_dict.items() %}
+                            {% if k == key %}
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" href='{{ v }}' data-bs-toggle="tab" role="tab" aria-controls='{{ key }}' aria-current="true">{{key}}</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+
+            </div><!--End card Header-->
+            <div class="card-body">
+                <div class="tab-content" id="tab-content">
+
+                    {% for mineral, map in map_dict.items() %}
+                        {% for key, value in tab_id_dict.items() %}
+                            <div class="tab-pane fade" id={{value}} role="tabpanel">
+                            {% if mineral == key %}
+                                <p class="card-text text-center"><h5>2021 {{key}} Production by Country</h5></p>
+                                <h5>{{key}}</h5>
+                                {{map|safe}}
+                            {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div><!--End tab-content-->
+            </div><!--End card-body-->
+       </div><!--End card-->
+    </div><!--End container-->
+</body>
+</html>

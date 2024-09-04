@@ -1,0 +1,80 @@
+<!--Page for mineral fuels
+ 'Steam Coal ', 'Coking Coal', 'Lignite', 'Natural Gas', 'Petroleum', 'Oil Sands (part of Petroleum)', 'Oil Shales', 'Uranium (U3O8)'-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Mineral Fuels
+{% endblock %}
+
+{% block tablist %}
+    <li class="nav-item">
+        <a class="nav-link active btn-outline-primary-custom5_1" id="steam-coal-tab" data-toggle="tab" href="#steam-coal" role="tab" aria-controls="steam-coal" aria-selected="true">Steam Coal</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="coking-coal-tab" data-toggle="tab" href="#coking-coal" role="tab" aria-controls="coking-coal" aria-selected="true">Coking Coal</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="lignite-tab" data-toggle="tab" href="#lignite" role="tab" aria-controls="lignite" aria-selected="true">Lignite</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="natural-gas-tab" data-toggle="tab" href="#natural-gas" role="tab" aria-controls="natural-gas" aria-selected="true">Natural Gas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="petroleum-tab" data-toggle="tab" href="#petroleum" role="tab" aria-controls="petroleum" aria-selected="true">Petroleum</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="oil-sands-tab" data-toggle="tab" href="#oil-sands" role="tab" aria-controls="oil-sands" aria-selected="true">Oil Sands</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="oil-shales-tab" data-toggle="tab" href="#oil-shales" role="tab" aria-controls="oil-shales" aria-selected="true">Oil Shales</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link btn-outline-primary-custom5_1" id="uranium-tab" data-toggle="tab" href="#uranium" role="tab" aria-controls="uranium" aria-selected="true">Uranium (U<sub>3</sub>O<sub>8</sub>)</a>
+    </li>
+
+
+{% endblock %}
+
+{% block tabcontent %}
+<div class="card-body">
+    <div class="tab-content" id="tab-content">
+        <div class="tab-pane fade show active" id="steam-coal" role="tabpanel" aria-labelledby="steam-coal-tab">
+            <!-- <h5>Steam Coal</h5> -->
+            {{ map_dict["Steam Coal "] | safe }}
+            <footer>(incl. Anthracite, bituminous and sub-bituminous Coal)</footer>
+        </div>
+        <div class="tab-pane fade" id="coking-coal" role="tabpanel" aria-labelledby="coking-coal-tab">
+            <!-- <h5>Coking Coal</h5> -->
+            {{ map_dict["Coking Coal"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="lignite" role="tabpanel" aria-labelledby="lignite-tab">
+            <!-- <h5>Lignite</h5> -->
+            {{ map_dict["Lignite"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="natural-gas" role="tabpanel" aria-labelledby="natural-gas-tab">
+            <!-- <h5>Natural Gas</h5> -->
+            {{ map_dict["Natural Gas"] | safe }}
+            <footer>(marketed production)</footer>
+        </div>
+        <div class="tab-pane fade" id="petroleum" role="tabpanel" aria-labelledby="petroleum-tab">
+            <!-- <h5>Petroleum</h5> -->
+            {{ map_dict["Petroleum"] | safe }}
+            <footer>(gross production incl. Natural Gas Liquids)</footer>
+        </div>
+        <div class="tab-pane fade" id="oil-sands" role="tabpanel" aria-labelledby="oil-sands-tab">
+            <!-- <h5>Oil Sands (part of Petroleum)</h5> -->
+            {{ map_dict["Oil Sands (part of Petroleum)"] | safe }}
+            <footer>(gross production, part of Petroleum)</footer>
+        </div>
+        <div class="tab-pane fade" id="oil-shales" role="tabpanel" aria-labelledby="oil-shales-tab">
+            <!-- <h5>Oil Shales</h5> -->
+            {{ map_dict["Oil Shales"] | safe }}
+        </div>
+        <div class="tab-pane fade" id="uranium" role="tabpanel" aria-labelledby="uranium-tab">
+            <!-- <h5>Uranium (U3O8)</h5> -->
+            {{ map_dict["Uranium (U3O8)"] | safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

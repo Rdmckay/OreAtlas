@@ -1,0 +1,200 @@
+
+#______________________________________________________________
+#Template for each type of metal. Copy-paste this into app.py and change each instance of "METAL" to the appropriate metal.
+# and each instance of "METAL_SHEET" to the appropriate sheet name. Be sure it matches exactly.
+#         if sheet in type_ferro_alloy:
+#                 fill_color='OrRd',
+#         elif sheet in type_non_ferrous:
+#                 fill_color='PuBuGn',
+#         elif sheet in type_precious:
+#                 fill_color='plasma',
+#         elif sheet in type_industrial:
+#                 fill_color='YlGn',
+#         elif sheet in type_fuel:
+#                 fill_color='RdPu',
+# if sheet has < 6 items, (i.e. in "no jenks"), set use_jenks to False. Else True.
+#______________________________________________________________
+
+    m_METAL = folium.Map(location=[40,0], zoom_start=2, tiles=None, max_bounds=True) # tiles None for LayerControl, make tile_layer separate to set "control=False".
+
+    plugins.Fullscreen(
+        position='bottomleft',
+        title='Open full-screen map',
+        title_cancel='Close full-screen map',
+        force_separate_button=True
+    ).add_to(m_METAL)
+
+    tile_layer.add_to(m_METAL)
+    # read an individual sheet to a dataframe.
+    df_METAL = pd.read_excel("6.5. Share_of_World_Mineral_Production_2021_by_Countries.xlsx", sheet_name="METAL_SHEET", skiprows=[0])
+
+    # remove the last row of the spreadsheet that contains the total
+    df_METAL = df_METAL[df_METAL['Country'] != 'Total']
+    df_METAL['Share in %'] = round(df_METAL['Share in %'],2)
+
+    merge_df_METAL = countries.merge(df_METAL,on='Country')
+
+    folium.Choropleth(
+        geo_data=merge_df_METAL,
+        data=merge_df_METAL,
+        columns=['Country', wmp],
+        key_on='feature.properties.Country',
+        fill_color='PuBuGn',
+        fill_opacity=1,
+        line_color='black',
+        line_opacity=1,
+        legend_name="METAL_SHEET (% of Global Production)",
+        name="METAL_SHEET",
+        highlight=True,
+        use_jenks=True,
+        nan_fill_opacity = 0.25,
+        overlay = False,
+        ).add_to(m_METAL)
+
+    hoverText = folium.features.GeoJson(
+        #geo_data=geo_json_data,
+        data=merge_df_METAL,
+        style_function=style_function,
+        control=False,
+        highlight_function=highlight_function,
+        tooltip=folium.features.GeoJsonTooltip(
+            fields=['Country', 'Rank 2021', wmp, wmd],
+            aliases=['Country: ', 'Rank: ', 'Share in %: ', f'{merge_df_METAL["unit"][1]}: '],
+            style=("background-color: white; color: #333333; font-family: arial; font-size: 12px; padding: 10px;")
+        )
+    )
+
+    m_METAL.add_child(hoverText)
+    m_METAL.keep_in_front(hoverText)
+    folium.LayerControl().add_to(m_METAL)
+    m_METAL = m_METAL.get_root()._repr_html_()
+    # add the map to a list of maps
+    # map_list.append(m_iron)
+    map_dict["METAL_SHEET"] = m_METAL
+
+
+
+
+#______________________________________________________________
+#Template for each metal in HTML page. First entry is 'active' and 'show active', delete those for others.
+#______________________________________________________________
+{% block tablist %}
+    <li class="nav-item">
+        <a class="nav-link active" id="_______-tab" data-toggle="tab" href="#_______" role="tab" aria-controls="_______" aria-selected="true">_______</a>
+    </li>
+
+{% endblock %}
+
+{% block tabcontent %}
+    <div class="tab-pane fade show active" id="_______" role="tabpanel" aria-labelledby="_______-tab">
+        <!--<h5>_______</h5>-->
+        {{ map_dict["_______"] | safe }}
+    </div>
+{% endblock %}
+
+#______________________________________________________________
+#Second entry, not active
+#______________________________________________________________
+{% block tablist %}
+    <li class="nav-item">
+        <a class="nav-link" id="_______-tab" data-toggle="tab" href="#_______" role="tab" aria-controls="_______" aria-selected="true">_______</a>
+    </li>
+
+{% endblock %}
+
+{% block tabcontent %}
+    <div class="tab-pane fade" id="_______" role="tabpanel" aria-labelledby="_______-tab">
+        <!--<h5>_______</h5>-->
+        {{ map_dict["_______"] | safe }}
+    </div>
+{% endblock %}
+
+
+    #         if sheet in type_ferro_alloy:
+    #             folium.Choropleth(
+    #                 geo_data=merge_df,
+    #                 data=merge_df,
+    #                 columns=['Country', wmp],
+    #                 key_on='feature.properties.Country',
+    #                 fill_color='OrRd',
+    #                 fill_opacity=1,
+    #                 line_color='black',
+    #                 line_opacity=1,
+    #                 legend_name=f"{sheet} (% of Global Production)",
+    #                 name=sheet,
+    #                 highlight=True,
+    #                 use_jenks=True,
+    #                 nan_fill_opacity = 0.25,
+    #                 overlay = False,
+    #                 ).add_to(m)
+ #         elif sheet in type_non_ferrous:
+    #             folium.Choropleth(
+    #                 geo_data=merge_df,
+    #                 data=merge_df,
+    #                 columns=['Country', wmp],
+    #                 key_on='feature.properties.Country',
+    #                 fill_color='PuBuGn',
+    #                 fill_opacity=1,
+    #                 line_color='black',
+    #                 line_opacity=1,
+    #                 legend_name=f"{sheet} (% of Global Production)",
+    #                 name=sheet,
+    #                 highlight=True,
+    #                 use_jenks=True,
+    #                 nan_fill_opacity = 0.25,
+    #                 overlay = False,
+    #                 ).add_to(m)
+
+    #         elif sheet in type_precious:
+    #             folium.Choropleth(
+    #                 geo_data=merge_df,
+    #                 data=merge_df,
+    #                 columns=['Country', wmp],
+    #                 key_on='feature.properties.Country',
+    #                 fill_color='plasma',
+    #                 fill_opacity=1,
+    #                 line_color='black',
+    #                 line_opacity=1,
+    #                 legend_name=f"{sheet} (% of Global Production)",
+    #                 name=sheet,
+    #                 highlight=True,
+    #                 use_jenks=True,
+    #                 nan_fill_opacity = 0.25,
+    #                 overlay = False,
+    #                 ).add_to(m)
+
+    #         elif sheet in type_industrial:
+    #             folium.Choropleth(
+    #                 geo_data=merge_df,
+    #                 data=merge_df,
+    #                 columns=['Country', wmp],
+    #                 key_on='feature.properties.Country',
+    #                 fill_color='YlGn',
+    #                 fill_opacity=1,
+    #                 line_color='black',
+    #                 line_opacity=1,
+    #                 legend_name=f"{sheet} (% of Global Production)",
+    #                 name=sheet,
+    #                 highlight=True,
+    #                 use_jenks=True,
+    #                 nan_fill_opacity = 0.25,
+    #                 overlay = False,
+    #                 ).add_to(m)
+
+    #         elif sheet in type_fuel:
+    #             folium.Choropleth(
+    #                 geo_data=merge_df,
+    #                 data=merge_df,
+    #                 columns=['Country', wmp],
+    #                 key_on='feature.properties.Country',
+    #                 fill_color='RdPu',
+    #                 fill_opacity=1,
+    #                 line_color='black',
+    #                 line_opacity=1,
+    #                 legend_name=f"{sheet} (% of Global Production)",
+    #                 name=sheet,
+    #                 highlight=True,
+    #                 use_jenks=True,
+    #                 nan_fill_opacity = 0.25,
+    #                 overlay = False,
+    #                 ).add_to(m)
